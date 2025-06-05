@@ -1,3 +1,7 @@
+/* Entry file which sets everything up and calls the rest of the program.
+ * Copyright (C) 2025 Jake Steinburger (UnmappedStack) under the Mozilla Public License 2.0.
+ * See the LICENSE file in the Git repository's root for mroe information. */
+
 #include <pixtty.h>
 #include <dev.h>
 #include <gui.h>
