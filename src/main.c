@@ -11,7 +11,7 @@ void exec_shell(void) {
         execve(SHELL, (char*[]){SHELL, "-a", NULL}, __environ);
 }
 
-int main() {
+int main(void) {
     printf("hello i am pixtty terminal\n");
     int stdio_fd;
     if ((stdio_fd=init_dev()) < 0) return -1;
