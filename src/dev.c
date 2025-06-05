@@ -43,9 +43,6 @@ static char *get_slave_name(int master_fd) {
 }
 
 static void handle_tty_write(char *buf, Win win) {
-    printf("the VTTY got data written to it:\n");
-    int len = strlen(buf);
-    fwrite(buf, 1, (len < 256) ? len : 256, stdout);
     write_str(win, buf);
 }
 
@@ -61,6 +58,7 @@ int wait_for_vtty_write_iteration(int master_fd, Win win) {
     }
     if (!FD_ISSET(master_fd, &rfds)) return 0;
     ssize_t n = read(master_fd, buf, sizeof(buf) - 1);
+    buf[n] = 0;
     if (!n) return 0;
     if (n < 0) {
         fprintf(stderr, "read returned error");

@@ -8,7 +8,7 @@
 void exec_shell(void) {
     pid_t pid = fork();
     if (!pid)
-        execve(SHELL, (char*[]){SHELL, NULL}, __environ);
+        execve(SHELL, (char*[]){SHELL, "-a", NULL}, __environ);
 }
 
 int main() {

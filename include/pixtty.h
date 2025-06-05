@@ -1,5 +1,5 @@
 #pragma once
 
-#define SHELL "/usr/bin/unbash"
+#define SHELL "/usr/bin/uname"
 
 void exec_shell(void);
